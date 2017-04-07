@@ -1,0 +1,40 @@
+{
+  "name": "http-status-code-definitions",
+  "version": "1.0.0",
+  "description": "Get the definitions for http status codes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaebradley/http-status-code-definition-identifier.git"
+  },
+  "keywords": [
+    "http"
+  ],
+  "author": "jae.b.bradley@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaebradley/http-status-code-definition-identifier/issues"
+  },
+  "homepage": "https://github.com/jaebradley/http-status-code-definition-identifier#readme",
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-istanbul": "^0.12.2",
+    "babel-preset-es2015": "^6.24.0",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "chai-immutable": "^1.6.0",
+    "coveralls": "^2.13.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "mocha-lcov-reporter": "^1.3.0",
+    "sinon": "^2.1.0",
+    "sinon-chai": "^2.9.0"
+  },
+  "dependencies": {
+    "enumify": "^1.0.4",
+    "immutable": "^3.8.1"
+  }
+}
