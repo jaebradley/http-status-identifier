@@ -143,7 +143,7 @@ export default class HttpStatus extends Enum {
   static getStatusCodeMap() {
     const statusCodeMap = {};
     HttpStatus.enumValues.forEach((status) => {
-      statusCodeMap[status.definition.name.toUpperCase()] = status;
+      statusCodeMap[status.definition.code] = status;
     });
     return Map(statusCodeMap);
   }

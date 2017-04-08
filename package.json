@@ -10,7 +10,7 @@
     "coveralls": "npm run compile && npm run-script coverage && node_modules/.bin/coveralls < coverage/lcov.info",
     "prepublish": "npm run compile",
     "lint": "eslint src",
-    "test": "npm run build && mocha --compilers --recursive js:babel-core/register"
+    "test": "npm run build && mocha --recursive --compilers js:babel-core/register"
   },
   "repository": {
     "type": "git",
