@@ -7,7 +7,7 @@ const defaults = {
   code: 0,
   description: '',
   supplementaryInformation: '',
-  rfcUrl: '',
+  documentationUrl: '',
 };
 
 export default class HttpStatusDefinition extends Record(defaults) {}
