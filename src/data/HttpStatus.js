@@ -1,6 +1,7 @@
 'use es6';
 
 import { Enum } from 'enumify';
+import { Map } from 'immutable';
 
 import { CONTINUE as CONTINUE_DESCRIPTION,
          SWITCHING_PROTOCOLS as SWITCHING_PROTOCOLS_DESCRIPTION,
@@ -138,7 +139,23 @@ import HttpStatusDefinition from './HttpStatusDefinition';
 
 // Sourced from https://httpstatuses.com/
 
-export default class HttpStatus extends Enum {}
+export default class HttpStatus extends Enum {
+  static getStatusCodeMap() {
+    const statusCodeMap = {};
+    HttpStatus.enumValues.forEach((status) => {
+      statusCodeMap[status.definition.name.toUpperCase()] = status;
+    });
+    return Map(statusCodeMap);
+  }
+
+  static getStatusNameMap() {
+    const statusNameMap = {};
+    HttpStatus.enumValues.forEach((status) => {
+      statusNameMap[status.definition.name.toUpperCase()] = status;
+    });
+    return Map(statusNameMap);
+  }
+}
 
 HttpStatus.initEnum({
   // 1xx
