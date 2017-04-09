@@ -19,36 +19,36 @@ describe('description', () => {
   const identifier = new HttpStatusIdentifier();
   describe('identify definition from status code', () => {
     it('rejects', () => {
-      return expect(identifier.identifyDefinitionFromStatusCode(1)).to.eventually.be.rejected;
+      return expect(identifier.identifyStatusFromCode(1)).to.eventually.be.rejected;
     });
 
     it('resolves', () => {
-      return expect(identifier.identifyDefinitionFromStatusCode(100))
+      return expect(identifier.identifyStatusFromCode(100))
               .to.become(HttpStatus.CONTINUE);
     });
   });
 
   describe('identify definition from status name', () => {
     it('rejects', () => {
-      return expect(identifier.identifyDefinitionFromStatusName('foo')).to.eventually.be.rejected;
+      return expect(identifier.identifyStatusFromName('foo')).to.eventually.be.rejected;
     });
 
     it('resolves', () => {
-      return expect(identifier.identifyDefinitionFromStatusName('Continue')).to.become(HttpStatus.CONTINUE);
+      return expect(identifier.identifyStatusFromName('Continue')).to.become(HttpStatus.CONTINUE);
     });
   });
 
   describe('identify definition', () => {
     it('returns status for number', () => {
-      return expect(identifier.identifyDefinition('100')).to.become(HttpStatus.CONTINUE);
+      return expect(identifier.identify('100')).to.become(HttpStatus.CONTINUE);
     });
 
     it('returns status for name', () => {
-      expect(identifier.identifyDefinition('Continue')).to.become(HttpStatus.CONTINUE);
+      return expect(identifier.identify('Continue')).to.become(HttpStatus.CONTINUE);
     });
 
     it('returns rejected Promise', () => {
-      return expect(identifier.identifyDefinition(undefined)).to.eventually.be.rejected;
+      return expect(identifier.identify(undefined)).to.eventually.be.rejected;
     });
   });
 });

@@ -8,15 +8,15 @@ export default class HttpStatusIdentifier {
     this.statusNameMap = HttpStatus.getStatusNameMap();
   }
 
-  identifyDefinition(statusRepresentation) {
+  identify(statusRepresentation) {
     // If the input is a number, try to return a definition for the number
     if (!isNaN(Number(statusRepresentation))) {
-      return this.identifyDefinitionFromStatusCode(Number(statusRepresentation));
+      return this.identifyStatusFromCode(Number(statusRepresentation));
     }
 
     // If the input is a string, assume the input is the status name
     if (typeof statusRepresentation === 'string') {
-      return this.identifyDefinitionFromStatusName(statusRepresentation);
+      return this.identifyStatusFromName(statusRepresentation);
     }
 
     // Else fail
@@ -27,7 +27,7 @@ export default class HttpStatusIdentifier {
     });
   }
 
-  identifyDefinitionFromStatusName(statusName) {
+  identifyStatusFromName(statusName) {
     const definition = this.statusNameMap.get(statusName.toUpperCase());
     return new Promise((resolve, reject) => {
       if (definition) {
@@ -40,7 +40,7 @@ export default class HttpStatusIdentifier {
     });
   }
 
-  identifyDefinitionFromStatusCode(statusCode) {
+  identifyStatusFromCode(statusCode) {
     const definition = this.statusCodeMap.get(statusCode.toString());
     return new Promise((resolve, reject) => {
       if (definition) {
