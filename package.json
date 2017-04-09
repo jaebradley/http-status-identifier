@@ -4,7 +4,7 @@
   "description": "Get the definitions for http status codes",
   "main": "./build/index.js",
   "scripts": {
-    "compile": "babel --presets es2015,stage-0 -d build/ src/",
+    "compile": "./node_modules/.bin/babel --presets es2015,stage-0 -d build/ src/",
     "coverage": "babel-node ./node_modules/istanbul/lib/cli cover node_modules/mocha/bin/_mocha test --  --recursive --compilers js:babel-core/register",
     "coveralls": "npm run compile && npm run coverage",
     "prepublish": "npm run compile",
