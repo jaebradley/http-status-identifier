@@ -49,10 +49,5 @@
   "dependencies": {
     "enumify": "^1.0.4",
     "immutable": "^3.8.1"
-  },
-  "config": {
-      "blanket": {
-        "pattern": "src"
-      }
-    }
+  }
 }
