@@ -2,7 +2,7 @@
 
 import HttpStatus from '../data/HttpStatus';
 
-export default class HttpStatusCodeDefinitionIdentifier {
+export default class HttpStatusIdentifier {
   constructor() {
     this.statusCodeMap = HttpStatus.getStatusCodeMap();
     this.statusNameMap = HttpStatus.getStatusNameMap();

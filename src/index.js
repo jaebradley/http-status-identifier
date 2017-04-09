@@ -1,9 +1,9 @@
 'use es6';
 
-import HttpStatusCodeDefinitionIdentifier from './services/HttpStatusCodeDefinitionIdentifier';
+import HttpStatusIdentifier from './services/HttpStatusIdentifier';
 import HttpStatus from './data/HttpStatus';
 
 module.exports = {
-  HttpStatusCodeDefinitionIdentifier,
+  HttpStatusIdentifier,
   HttpStatus,
 };
