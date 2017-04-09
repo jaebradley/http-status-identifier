@@ -1,13 +1,17 @@
+/* eslint-disable arrow-body-style */
+
 'use es6';
 
 import chai from 'chai';
 import chaiImmutable from 'chai-immutable';
-import sinon from 'sinon';
+import chaiAsPromised from 'chai-as-promised';
 import sinonChai from 'sinon-chai';
 import HttpStatusCodeDefinitionIdentifier from '../../src/services/HttpStatusCodeDefinitionIdentifier';
+import HttpStatus from '../../src/data/HttpStatus';
 
 chai.use(chaiImmutable);
 chai.use(sinonChai);
+chai.use(chaiAsPromised);
 
 const expect = chai.expect;
 
@@ -15,48 +19,36 @@ describe('description', () => {
   const identifier = new HttpStatusCodeDefinitionIdentifier();
   describe('identify definition from status code', () => {
     it('rejects', () => {
-      const statusCodeDefiner = sinon.stub(identifier, 'statusCodeMap').returns({ get: undefined });
-      expect(identifier.identifyDefinitionFromStatusCode(1)).to.eql(Promise.reject('Unable to identify definition for status code: 1'));
-      statusCodeDefiner.restore();
+      return expect(identifier.identifyDefinitionFromStatusCode(1)).to.eventually.be.rejected;
     });
 
     it('resolves', () => {
-      const statusCodeDefiner = sinon.stub(identifier, 'statusCodeMap').returns({ get: true });
-      expect(identifier.identifyDefinitionFromStatusCode(1)).to.eql(Promise.resolve(true));
-      statusCodeDefiner.restore();
+      return expect(identifier.identifyDefinitionFromStatusCode(100))
+              .to.become(HttpStatus.CONTINUE);
     });
   });
 
   describe('identify definition from status name', () => {
     it('rejects', () => {
-      const statusNameDefiner = sinon.stub(identifier, 'statusNameMap').returns({
-        get: undefined });
-      expect(identifier.identifyDefinitionFromStatusName('foo')).to.eql(Promise.reject('Unable to identify definition for status code: foo'));
-      statusNameDefiner.restore();
+      return expect(identifier.identifyDefinitionFromStatusName('foo')).to.eventually.be.rejected;
     });
 
     it('resolves', () => {
-      const statusNameDefiner = sinon.stub(identifier, 'statusNameMap').returns({ get: true });
-      expect(identifier.identifyDefinitionFromStatusName('foo')).to.eql(Promise.resolve(true));
-      statusNameDefiner.restore();
+      return expect(identifier.identifyDefinitionFromStatusName('Continue')).to.become(HttpStatus.CONTINUE);
     });
   });
 
   describe('identify definition', () => {
     it('returns status for number', () => {
-      const statusCodeIdentifier = sinon.stub(identifier, 'identifyDefinitionFromStatusCode').returns('jaebaebae');
-      expect(identifier.identifyDefinition('1')).to.eql('jaebaebae');
-      statusCodeIdentifier.restore();
+      return expect(identifier.identifyDefinition('100')).to.become(HttpStatus.CONTINUE);
     });
 
     it('returns status for name', () => {
-      const statusNameIdentifier = sinon.stub(identifier, 'identifyDefinitionFromStatusName').returns('jaebaebae');
-      expect(identifier.identifyDefinition('foo')).to.eql('jaebaebae');
-      statusNameIdentifier.restore();
+      expect(identifier.identifyDefinition('Continue')).to.become(HttpStatus.CONTINUE);
     });
 
     it('returns rejected Promise', () => {
-      expect(identifier.identifyDefinition(undefined)).to.eql(Promise.reject('Unable to identify definition for: undefined'));
+      return expect(identifier.identifyDefinition(undefined)).to.eventually.be.rejected;
     });
   });
 });

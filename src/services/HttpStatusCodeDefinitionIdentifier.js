@@ -30,7 +30,7 @@ export default class HttpStatusCodeDefinitionIdentifier {
   identifyDefinitionFromStatusName(statusName) {
     const definition = this.statusNameMap.get(statusName.toUpperCase());
     return new Promise((resolve, reject) => {
-      if (!definition) {
+      if (definition) {
         resolve(definition);
       } else {
         reject({
@@ -41,9 +41,9 @@ export default class HttpStatusCodeDefinitionIdentifier {
   }
 
   identifyDefinitionFromStatusCode(statusCode) {
-    const definition = this.statusCodeMap.get(statusCode);
+    const definition = this.statusCodeMap.get(statusCode.toString());
     return new Promise((resolve, reject) => {
-      if (!definition) {
+      if (definition) {
         resolve(definition);
       } else {
         reject({
