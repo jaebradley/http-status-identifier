@@ -1,6 +1,6 @@
 'use es6';
 
-import { HttpStatus } from '../data/HttpStatus';
+import HttpStatus from '../data/HttpStatus';
 
 export default class HttpStatusCodeDefinitionIdentifier {
   constructor() {
@@ -10,7 +10,7 @@ export default class HttpStatusCodeDefinitionIdentifier {
 
   identifyDefinition(statusRepresentation) {
     // If the input is a number, try to return a definition for the number
-    if (isNaN(Number(statusRepresentation))) {
+    if (!isNaN(Number(statusRepresentation))) {
       return this.identifyDefinitionFromStatusCode(Number(statusRepresentation));
     }
 
