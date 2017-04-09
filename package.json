@@ -1,5 +1,5 @@
 {
-  "name": "http-status-code-definitions",
+  "name": "http-status-identifier",
   "version": "1.0.0",
   "description": "Get the definitions for http status codes",
   "main": "./build/index.js",
