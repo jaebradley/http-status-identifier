@@ -20,7 +20,7 @@ export default class HttpStatusFamilyIdentifer {
   }
 
   identifyFamilyFromStatus(status) {
-    const family = this.statusFamilyMap.get(status);
+    const family = this.statusFamilyMap.get(status.name);
     return new Promise((resolve, reject) => {
       if (family) {
         resolve(family);
