@@ -1,5 +1,5 @@
 import { Enum } from 'enumify';
-import { List } from 'immutable';
+import { List, Map } from 'immutable';
 
 import { CONTINUE,
          SWITCHING_PROTOCOLS,
@@ -66,7 +66,18 @@ import { CONTINUE,
          NETWORK_CONNECT_TIMEOUT_ERROR,
        } from './HttpStatus';
 
-export default class HttpStatusFamily extends Enum {}
+export default class HttpStatusFamily extends Enum {
+  static getStatusFamilyMap() {
+    const statusFamilyMap = {};
+    HttpStatusFamily.enumValues.forEach((family) => {
+      family.statuses.forEach((status) => {
+        statusFamilyMap[status] = family;
+      });
+    });
+    return Map(statusFamilyMap);
+  }
+}
+
 HttpStatusFamily.initEnum({
   INFORMATIONAL: {
     statuses: List.of(
