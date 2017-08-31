@@ -1,5 +1,9 @@
 # HTTP Status Identifier
 
+[![Build Status](https://travis-ci.org/jaebradley/http-status-identifier.svg?branch=master)](https://travis-ci.org/jaebradley/http-status-identifier)
+[![Coverage Status](https://coveralls.io/repos/github/jaebradley/http-status-code-definition-identifier/badge.svg?branch=master)](https://coveralls.io/github/jaebradley/http-status-code-definition-identifier?branch=master)
+[![npm version](https://badge.fury.io/js/http-status-identifier.svg)](https://badge.fury.io/js/http-status-identifier)
+
 ### Purpose
 
 A simple Node JS client that returns an [HTTP Status](https://github.com/jaebradley/http-status-identifier/blob/master/src/data/HttpStatus.js), wrapped in a Promise, given either a status code (i.e `200`) or the status name (i.e `I'm a teapot`).
