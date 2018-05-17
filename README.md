@@ -1,5 +1,6 @@
 # HTTP Status Identifier
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jaebradley/http-status-identifier.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/jaebradley/http-status-identifier.svg?branch=master)](https://travis-ci.org/jaebradley/http-status-identifier)
 [![codecov](https://codecov.io/gh/jaebradley/http-status-identifier/branch/master/graph/badge.svg)](https://codecov.io/gh/jaebradley/http-status-identifier)
 [![npm version](https://badge.fury.io/js/http-status-identifier.svg)](https://badge.fury.io/js/http-status-identifier)
