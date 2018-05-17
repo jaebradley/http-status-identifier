@@ -224,6 +224,7 @@ const HttpStatusNamesToFamily = Object.freeze({
 });
 
 export {
+  HttpStatusFamily,
   HttpStatusCodesToFamily,
   HttpStatusNamesToFamily,
 };

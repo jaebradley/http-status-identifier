@@ -12,17 +12,17 @@ const config = {
   input: 'src/index.js',
   output: [
     {
-      file: pkg.main,
+      file: pkg.browser,
       format: 'umd',
       name: pkg.name,
     },
     {
-      file: 'build/index.cjs.js',
+      file: pkg.main,
       format: 'cjs',
       name: pkg.name,
     },
     {
-      file: 'build/index.esm.js',
+      file: pkg.module,
       format: 'es',
       name: pkg.name,
     },

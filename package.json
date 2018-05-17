@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jaebradley/http-status-code-definition-identifier.git"
+    "url": "https://github.com/jaebradley/http-status-identifier.git"
   },
   "keywords": [
     "http",
@@ -35,9 +35,9 @@
   "author": "jae.b.bradley@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jaebradley/http-status-code-definition-identifier/issues"
+    "url": "https://github.com/jaebradley/http-status-identifier/issues"
   },
-  "homepage": "https://github.com/jaebradley/http-status-code-definition-identifier#readme",
+  "homepage": "https://github.com/jaebradley/http-status-identifier#readme",
   "jest": {
     "testEnvironment": "node",
     "testPathIgnorePatterns": [
@@ -76,7 +76,7 @@
     "rollup-plugin-local-resolve": "^1.0.7",
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-uglify": "^3.0.0",
-    "semantic-release": "^15.1.5",
+    "semantic-release": "^15.4.1",
     "travis-deploy-once": "^5.0.0"
   },
   "peerDependencies": {}
