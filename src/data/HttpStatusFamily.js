@@ -1,4 +1,4 @@
-import HttpStatus from './HttpStatus';
+import { HttpStatus } from './HttpStatus';
 
 const HttpStatusFamily = Object.freeze({
   INFORMATIONAL: Object.freeze({
