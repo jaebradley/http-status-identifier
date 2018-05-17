@@ -1,5 +1,3 @@
-'use es6';
-
 // From https://httpstatuses.com/
 
 export const CONTINUE = 'The initial part of a request has been received and has not yet been rejected by the server. The server intends to send a final response after the request has been fully received and acted upon.';

@@ -1,5 +1,3 @@
-'use es6';
-
 // From https://httpstatuses.com/
 
 export const CONTINUE = 'When the request contains an Expect header field that includes a 100-continue expectation, the 100 response indicates that the server wishes to receive the request payload body. The client ought to continue sending the request and discard the 100 response. If the request did not contain an Expect header field containing the 100-continue expectation, the client can simply discard this interim response.';
