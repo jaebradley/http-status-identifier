@@ -1,7 +1,7 @@
 # HTTP Status Identifier
 
 [![Build Status](https://travis-ci.org/jaebradley/http-status-identifier.svg?branch=master)](https://travis-ci.org/jaebradley/http-status-identifier)
-[![Coverage Status](https://coveralls.io/repos/github/jaebradley/http-status-code-definition-identifier/badge.svg?branch=master)](https://coveralls.io/github/jaebradley/http-status-code-definition-identifier?branch=master)
+[![codecov](https://codecov.io/gh/jaebradley/http-status-identifier/branch/master/graph/badge.svg)](https://codecov.io/gh/jaebradley/http-status-identifier)
 [![npm version](https://badge.fury.io/js/http-status-identifier.svg)](https://badge.fury.io/js/http-status-identifier)
 [![npm](https://img.shields.io/npm/dt/http-status-identifier.svg)](https://www.npmjs.com/package/http-status-identifier)
 
