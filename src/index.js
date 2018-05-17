@@ -1,5 +1,3 @@
-'use es6';
-
 import HttpStatusIdentifier from './services/HttpStatusIdentifier';
 import HttpStatusFamilyIdentifer from './services/HttpStatusFamilyIdentifier';
 import HttpStatus from './data/HttpStatus';
