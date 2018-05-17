@@ -6,7 +6,7 @@ import {
   HttpStatusNameToStatus,
 } from '../data/HttpStatus';
 
-const identify = (statusRepresentation) => {
+const identifyStatus = (statusRepresentation) => {
   let status;
 
   if (!isNaN(Number(statusRepresentation))) {
@@ -24,4 +24,4 @@ const identify = (statusRepresentation) => {
   return status;
 };
 
-export default identify;
+export default identifyStatus;
