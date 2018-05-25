@@ -58,7 +58,7 @@
     "@commitlint/prompt": "^6.0.2",
     "@commitlint/prompt-cli": "^6.0.2",
     "babel-core": "^7.0.0-0",
-    "babel-jest": "^22.4.3",
+    "babel-jest": "^23.0.0",
     "babel-preset-minify": "^0.4.0",
     "codecov": "^3.0.2",
     "dotenv": "^5.0.1",
