@@ -9,6 +9,10 @@
   "main": "build/index.cjs.js",
   "module": "build/index.esm.js",
   "global": false,
+  "engines": {
+    "node": "10.14.1",
+    "npm": "6.4.1"
+  },
   "scripts": {
     "build": "BABEL_ENV=production rollup -c",
     "codecov": "codecov",
