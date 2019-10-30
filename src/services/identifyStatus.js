@@ -1,6 +1,3 @@
-/* global isNaN */
-/* eslint no-restricted-globals: ["off", "isNaN"] */
-
 import {
   HttpStatusCodeToStatus,
   HttpStatusNameToStatus,
@@ -9,7 +6,7 @@ import {
 const identifyStatus = (statusRepresentation) => {
   let status;
 
-  if (!isNaN(Number(statusRepresentation))) {
+  if (!Number.isNaN(Number(statusRepresentation))) {
     // If the input is a number, try to return a definition for the number
     status = HttpStatusCodeToStatus[(Number(statusRepresentation))];
   } else if (typeof statusRepresentation === 'string') {
