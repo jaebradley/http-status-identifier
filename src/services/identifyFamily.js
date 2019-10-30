@@ -1,6 +1,3 @@
-/* global isNaN */
-/* eslint no-restricted-globals: ["off", "isNaN"] */
-
 import {
   HttpStatusCodesToFamily,
   HttpStatusNamesToFamily,
@@ -9,7 +6,7 @@ import {
 const identifyFamily = (statusRepresentation) => {
   let family;
 
-  if (!isNaN(Number(statusRepresentation))) {
+  if (!Number.isNaN(Number(statusRepresentation))) {
     // If the input is a number, try to return a definition for the number
     family = HttpStatusCodesToFamily[(Number(statusRepresentation))];
   } else if (typeof statusRepresentation === 'string') {
